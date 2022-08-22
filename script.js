@@ -15,7 +15,6 @@ img.addEventListener("mousedown", function(){
     
 img.addEventListener("mouseup", function(){
     img.src = 'popcat1.png';
-    audio.play();
 });
 
 // touch event
@@ -27,7 +26,6 @@ img.addEventListener("touchstart", function(){
 
 img.addEventListener("touchmove", function(){
     img.src = 'popcat1.png';
-     audio.play();
 });
 
 
@@ -113,6 +111,7 @@ function increaseScore(){
     score++;
     MyScore++;
     count.innerHTML = score;
+    // TODO : store at browser cookie
     malaysiaScore.innerHTML = MyScore;
     document.getElementById("table").rows[5].cells.item(3).innerHTML = MyScore;
 }
