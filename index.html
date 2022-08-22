@@ -118,12 +118,22 @@
         </div>
     </body>
     <script type="text/javascript">
+        var type = navigator.appName;
+        if (type == 'Netscape') {
+            var lang = navigator.language;
+        } else {
+            var lang = navigator.userLanguage;
+        }
+    
+        var country_code = lang.substr(3, 5);
+        console.log(country_code);
+
         $("#poppeccy").click(function() {
             $.ajax({
                 type: "PUT",
                 contentType: "application/json",
                 data: JSON.stringify({count: 1}),
-                url: "https://417mh6k9dj.execute-api.ap-northeast-2.amazonaws.com/pops/KR",
+                url: "https://417mh6k9dj.execute-api.ap-northeast-2.amazonaws.com/pops/" + country_code,
                 success: function(data){
                     console.log("Success", data);
                 },
