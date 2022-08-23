@@ -45,7 +45,7 @@ $(document).ready(function() {
             type: "PUT",
             contentType: "application/json",
             data: JSON.stringify({count: 1}),
-            url: "https://417mh6k9dj.execute-api.ap-northeast-2.amazonaws.com/pops/" + country_code,
+            url: "https://d222q2jc8pl4tv.cloudfront.net/pops/" + country_code,
             success: function(data){
                 console.log("Success", data);
             },
@@ -81,7 +81,7 @@ function getPops() {
     $.ajax({
         type: "GET",
         contentType: "application/json",
-        url: "https://417mh6k9dj.execute-api.ap-northeast-2.amazonaws.com/pops",
+        url: "https://d222q2jc8pl4tv.cloudfront.net/pops",
         success: function(data){
             result_list = data.Items
             
@@ -89,7 +89,12 @@ function getPops() {
                 location_code = result_list[i].location;
                 count = result_list[i].count;
 
-                document.getElementById("score_" + location_code).innerHTML = count;
+                try {
+                    document.getElementById("score_" + location_code).innerHTML = count;
+                } catch(err) {
+                    console.log("unknown location code");
+                }
+                    
             }
         },
         error: function(data){
