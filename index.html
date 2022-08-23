@@ -26,89 +26,64 @@
                     <i class="fas fa-trophy" style="color: gold; margin: 0px 10px 0px 10px; margin-left: -25px;
                     margin-right: 30px;"></i>
                     #1 <span class="flag-icon flag-icon-hk" style="margin: 0px 10px 0px 10px;"></span>120.3B &nbsp;
-                    LeaderBoard &nbsp; <span class="flag-icon flag-icon-my" style="margin: 0px 10px 0px 10px;"></span>
-                    <span id="my_score">10000</span>
+                    LeaderBoard &nbsp;
                     </label>
 
                 <div class="tab-content">
-                        <table id="table">
+                        <table id="table" style="width: 100%;">
                             <tr class="bordered" id="somerow">
                                 <td></td>
                                 <td><i class="fa fa-globe" style="color: blue;"></i></td>
                                 <td>WorldWide</td>
-                                <td id="wide_score">455,615,518,558</td>
+                                <td id="score_worldwide">0</td>
                             </tr>
                             <tr class="bordered">
                                 <td><i class='fas fa-medal' style="color: gold;"></i></td>
-                                <td><span class="flag-icon flag-icon-hk"></span></td>
-                                <td>Hong Kong</td>
-                                <td id="wide_score">19</td>
+                                <td><span class="flag-icon flag-icon-kr"></span></td>
+                                <td>South Korea</td>
+                                <td id="score_KR">0</td>
+                            </tr>
+                            <tr class="bordered">
+                                <td>11</td>
+                                <td><span class="flag-icon flag-icon-ru"></span></td>
+                                <td>Russia</td>
+                                <td id="score_RU">0</td>
+                            </tr>
+                            <tr class="bordered">
+                                <td>12</td>
+                                <td><span class="flag-icon flag-icon-kp"></span></td>
+                                <td>North Korea</td>
+                                <td id="score_KP">0</td>
                             </tr>
                             <tr class="bordered"> 
                                 <td><i class='fas fa-medal' style="color: silver;"></i></td>
                                 <td><span class="flag-icon flag-icon-tw"></span></td>
                                 <td>Taiwan</td>
-                                <td id="wide_score">14</td>
+                                <td id="score_TW">0</td>
                             </tr>
                             <tr class="bordered">
                                 <td><i class='fas fa-medal' style="color: brown;"></i></td>
                                 <td><span class="flag-icon flag-icon-th"></span></td>
                                 <td>Thailand</td>
-                                <td id="wide_score">13</td>
+                                <td id="score_TH">0</td>
                             </tr>
                             <tr class="bordered">
                                 <td>4</td>
                                 <td><span class="flag-icon flag-icon-jp"></span></td>
                                 <td>Japan</td>
-                                <td id="wide_score">11</td>
+                                <td id="score_JP">0</td>
                             </tr>
                             <tr class="bordered">
                                 <td>5</td>
                                 <td><span class="flag-icon flag-icon-my"></span></td>
-                                <td><b>Malaysia</b></td>
-                                <td id="wide_score">10000</td>
-                            </tr>
-                            <tr class="bordered">
-                                <td>6</td>
-                                <td><span class="flag-icon flag-icon-fi"></span></td>
-                                <td>Finland</td>
-                                <td id="wide_score">17</td>
-                            </tr>
-                            <tr class="bordered">
-                                <td>7</td>
-                                <td><span class="flag-icon flag-icon-se"></span></td>
-                                <td>Sweden</td>
-                                <td id="wide_score">13</td>
-                            </tr>
-                            <tr class="bordered">
-                                <td>8</td>
-                                <td><span class="flag-icon flag-icon-pl"></span></td>
-                                <td>Poland</td>
-                                <td id="wide_score">14</td>
-                            </tr>
-                            <tr class="bordered">
-                                <td>9</td>
-                                <td><span class="flag-icon flag-icon-dk"></span></td>
-                                <td>Denmark</td>
-                                <td id="wide_score">18</td>
+                                <td>Malaysia</td>
+                                <td id="score_MY">0</td>
                             </tr>
                             <tr class="bordered">
                                 <td>10</td>
                                 <td><span class="flag-icon flag-icon-id"></span></td>
                                 <td>Indonesia</td>
-                                <td id="wide_score">12</td>
-                            </tr>
-                            <tr class="bordered">
-                                <td>11</td>
-                                <td><span class="flag-icon flag-icon-hu"></span></td>
-                                <td>Hungary</td>
-                                <td id="wide_score">11</td>
-                            </tr>
-                            <tr class="bordered">
-                                <td>12</td>
-                                <td><span class="flag-icon flag-icon-rs"></span></td>
-                                <td>Serbia</td>
-                                <td id="wide_score">11</td>
+                                <td id="score_ID">0</td>
                             </tr>
                         </table>
                 </div>
@@ -117,30 +92,4 @@
             </div>
         </div>
     </body>
-    <script type="text/javascript">
-        var type = navigator.appName;
-        if (type == 'Netscape') {
-            var lang = navigator.language;
-        } else {
-            var lang = navigator.userLanguage;
-        }
-    
-        var country_code = lang.substr(3, 5);
-        console.log(country_code);
-
-        $("#poppeccy").click(function() {
-            $.ajax({
-                type: "PUT",
-                contentType: "application/json",
-                data: JSON.stringify({count: 1}),
-                url: "https://417mh6k9dj.execute-api.ap-northeast-2.amazonaws.com/pops/" + country_code,
-                success: function(data){
-                    console.log("Success", data);
-                },
-                error: function(data){
-                    console.log("Error", data);
-                }
-            })
-        })
-    </script>
 </html>
